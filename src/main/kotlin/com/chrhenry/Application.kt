@@ -1,3 +1,5 @@
+@file:JvmName("ApplicationKt")
+
 package com.chrhenry
 
 import io.ktor.application.*

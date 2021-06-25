@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.contracts.model.structure.UNKNOWN_COMPUTATION.type
+
 plugins {
     java
     kotlin("jvm") version "1.5.20"
@@ -22,4 +24,9 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junit_version")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+}
+
+task("stage", JavaExec::class) {
+    main = "com.chrhenry.ApplicationKt"
+    classpath = sourceSets["main"].runtimeClasspath
 }
