@@ -9,7 +9,9 @@ import io.ktor.routing.*
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
-fun Application.processHtml(){
+@Suppress("unused")
+@kotlin.jvm.JvmOverloads
+fun Application.processHtml(testing: Boolean = false){
     routing {
         static("/"){
             defaultResource("index.html", "files")
@@ -17,7 +19,9 @@ fun Application.processHtml(){
     }
 }
 
-fun Application.getController(){
+@Suppress("unused")
+@kotlin.jvm.JvmOverloads
+fun Application.getController(testing: Boolean = false){
     routing {
         get("/smoketest") {
             call.respondText("Smoke test")

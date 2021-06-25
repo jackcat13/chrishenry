@@ -1,7 +1,9 @@
+import org.jetbrains.kotlin.cli.jvm.compiler.findMainClass
 import org.jetbrains.kotlin.contracts.model.structure.UNKNOWN_COMPUTATION.type
 
 plugins {
     java
+    application
     kotlin("jvm") version "1.5.20"
 }
 
@@ -26,6 +28,10 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
+application{
+    mainClass.set("com.chrhenry.ApplicationKt")
+}
+
 task("stage") {
-    dependsOn("build", "clean")
+    dependsOn("installDist")
 }
