@@ -26,7 +26,6 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
-task("stage", JavaExec::class) {
-    main = "com.chrhenry.ApplicationKt"
-    classpath = sourceSets["main"].runtimeClasspath
+task("stage") {
+    dependsOn("build", "clean")
 }
