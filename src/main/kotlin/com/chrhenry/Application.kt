@@ -15,6 +15,7 @@ fun Application.processHtml(testing: Boolean = false){
     routing {
         static("/"){
             defaultResource("index.html", "files")
+            files("src/main/resources/files/style")
         }
     }
 }
