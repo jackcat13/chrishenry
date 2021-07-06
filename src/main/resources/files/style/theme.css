@@ -6,11 +6,10 @@
     font-style: normal;
 }
 
-html{
-    font-family: "nexa_lightregular";
-}
-
 body{
+    background-image: url("stars.jpg");
+    font-family: "nexa_lightregular";
+    font-size: 20px;
 }
 
 #siteWrapper{
@@ -21,30 +20,40 @@ body{
 #header{
     grid-column: 1/5;
     grid-row: 1;
-    border: solid 1px orange;
 }
 
 #logo{
-    background-color: black;
-    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 35px;
     width: 100px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    box-shadow: inset green -20px -20px 70px;
 }
+
+#logoRing{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 150px;
+    height: 100px;
+    border: solid 10px #ffbb00;
+    border-radius: 50%;
+    transform: rotate3d(0.8, 0.2, 0, 75deg); 
+    box-sizing: border-box;
+  }
 
 #content{
-    grid-column: 1/4;
+    grid-column: 1/5;
     grid-row: 2;
-    border: solid 1px red;
-    min-height: 600px;
-}
-
-#sideBar{
-    grid-column: 4/5;
-    grid-row: 2;
-    border: solid 1px blue;
+    min-height: 300px;
 }
 
 #footer{
-    grid-column: 1/5;
-    grid-row: 3;
-    border: solid 1px purple;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
 }
