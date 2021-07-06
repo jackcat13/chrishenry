@@ -9,3 +9,12 @@
 html{
     font-family: "nexa_lightregular";
 }
+
+body{
+}
+
+#logo{
+    background-color: black;
+    border-radius: 50%;
+    width: 100px;
+}
