@@ -5,3 +5,7 @@ function moveLogoToCenter() {
         document.getElementById('menuWrapper').className = 'menu';
     }, 5100);
 }
+
+setTimeout(function (){
+    moveLogoToCenter()
+}, 1000);
