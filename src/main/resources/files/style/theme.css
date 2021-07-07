@@ -40,6 +40,21 @@
     }
 }
 
+@keyframes toBlockDisplay {
+    0% { }
+    100% { 
+        display: block;
+    }
+}
+
+@keyframes showMenuItem {
+    0% { }
+    100% { 
+        width: 40%;
+        margin-left: 35%;
+    }
+}
+
 /*
     HTML components style
 */
@@ -103,6 +118,35 @@ body{
     grid-row: 2;
     min-height: 300px;
     width: 100%;
+}
+
+#menuWrapper{
+    visibility: hidden;
+    margin-top: 5%;
+}
+
+.menuItem{
+    top: 20%;
+    right: 70%;
+    margin-top: 2%;
+    width: 0px;
+    margin-left: 25%;
+    background: #101010;
+    border: 2px solid #999;
+    padding: 40px;
+    font-size: 30;
+    color: #ffffffdc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu{
+    display: block;
+}
+
+.menu .menuItem{
+    animation: showMenuItem 3s ease-in-out;
+    animation-fill-mode:forwards;
 }
 
 .panel{
