@@ -16,6 +16,7 @@ fun Application.processHtml(testing: Boolean = false){
         static("/"){
             defaultResource("index.html", "files")
             files("src/main/resources/files/style")
+            files("src/main/resources/files/js")
         }
     }
 }
