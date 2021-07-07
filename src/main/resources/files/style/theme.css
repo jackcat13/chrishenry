@@ -1,9 +1,15 @@
+/*
+    Variables definition
+*/
 :root {
   --xCircleRotation: 0.8;
   --yCircleRotation: 0;
   --zCircleRotation: 0.3;
 }
 
+/*
+    Fonts definition
+*/
 @font-face {
     font-family: "nexa_lightregular";
     src: url("nexa_light-webfont.woff2") format("woff2"),
@@ -12,6 +18,9 @@
     font-style: normal;
 }
 
+/*
+    Animations definition
+*/
 @keyframes logoRotate {
     0% { transform: rotate3d(var(--xCircleRotation), var(--yCircleRotation), var(--zCircleRotation), 75deg); }
     50% { transform: rotate3d(var(--xCircleRotation), var(--yCircleRotation), var(--zCircleRotation), 110deg); }
@@ -23,8 +32,20 @@
     100% { transform: translate(-406px, 0); }
 }
 
+@keyframes moveLogo {
+    0% { }
+    100% { 
+        top: 20%;
+        right: 70%;
+    }
+}
+
+/*
+    HTML components style
+*/
 body{
     background-image: url("space_background.jpg");
+    background-size: cover;
     font-family: "nexa_lightregular";
     font-size: 20px;
     text-align: justify;
@@ -41,10 +62,13 @@ body{
     grid-row: 1;
 }
 
-#logo{
+#logoWrapper{
     position: absolute;
     top: 10px;
     right: 35px;
+}
+
+#logo{
     width: 100px;
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -61,9 +85,8 @@ body{
 }
 
 #logoRing{
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    margin-top: -100px;
+    margin-left: -30px;
     width: 150px;
     height: 100px;
     border: solid 10px #ffbb00;
@@ -121,4 +144,12 @@ body{
     width: 400px;
     display: inline-block;
     transition: all .2s ease-out;
+}
+
+/* 
+    Animations based on logo click action
+*/
+.moveLogo{
+    animation: moveLogo 5s ease-in-out;
+    animation-fill-mode:forwards;
 }
