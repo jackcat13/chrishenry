@@ -1,3 +1,9 @@
+:root {
+  --xCircleRotation: 0.8;
+  --yCircleRotation: 0;
+  --zCircleRotation: 0.3;
+}
+
 @font-face {
     font-family: "nexa_lightregular";
     src: url("nexa_light-webfont.woff2") format("woff2"),
@@ -7,9 +13,9 @@
 }
 
 @keyframes logoRotate {
-    0% { transform: rotate3d(0.8, 0.2, 0, 75deg); }
-    50% { transform: rotate3d(0.8, 0.2, 0, 110deg); }
-    100% { transform: rotate3d(0.8, 0.2, 0, 75deg); }
+    0% { transform: rotate3d(var(--xCircleRotation), var(--yCircleRotation), var(--zCircleRotation), 75deg); }
+    50% { transform: rotate3d(var(--xCircleRotation), var(--yCircleRotation), var(--zCircleRotation), 110deg); }
+    100% { transform: rotate3d(var(--xCircleRotation), var(--yCircleRotation), var(--zCircleRotation), 75deg); }
 }
 
 @keyframes slideBand {
@@ -18,7 +24,7 @@
 }
 
 body{
-    background-image: url("stars.jpg");
+    background-image: url("space_background.jpg");
     font-family: "nexa_lightregular";
     font-size: 20px;
     text-align: justify;
@@ -57,12 +63,13 @@ body{
 #logoRing{
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 15px;
     width: 150px;
     height: 100px;
     border: solid 10px #ffbb00;
+    border-top-color: transparent;
     border-radius: 50%;
-    transform: rotate3d(0.8, 0.2, 0, 75deg);
+    transform: rotate3d(var(--xCircleRotation), var(--yCircleRotation), var(--zCircleRotation), 75deg);
     box-sizing: border-box;
     animation: 3s logoRotate;
     animation-iteration-count: infinite;
